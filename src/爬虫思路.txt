@@ -1,0 +1,46 @@
+文件夹结构
+第一层
+（sptt_spider）
+第二层
+（sptt）		       						（mp4）         	   sptt_spider.py 
+第三层
+（视频名字）							视频名字.mp4
+第三层
+（ts） cover.jpg info.txt ts.txt
+第四层
+视频片段.ts。。。。。。
+
+
+寻址思路
+
+这个地址的响应内容决定下方地址
+https://www.shipintiantang.com/
+body->main->section class="section wapper_wide"->div class="content"->div class="flex_row"->a class="showcase" 提取href作为下方地址->div class="div"->div class="img_wapper"->img class="img" 提取src(封面地址) 提取alt作为文件夹名字、视频名字
+
+
+这个地址的响应内容决定下方地址
+https://www.shipintiantang.com/?C_T=play&C_id=39464
+body->main class="main wapper_wide style="min-height: 459px;"->div class="flex_row"->div class="master"->div class->script type="text/javascript"->video的值就是要提取的地址
+
+
+这个地址的响应头决定下方地址/ppvod/8E3002A8549B952517691A45FFA8F3FB.m3u8
+https://cdn.800zy99.com/20190428/kQZ2AfYY/index.m3u8
+
+
+这个地址的响应内容里面有视频片段的个数，还有最终视频的地址
+https://cdn.800zy99.com/ppvod/8E3002A8549B952517691A45FFA8F3FB.m3u8
+
+
+# url = 'https://www.shipintiantang.com/'
+# url = 'https://www.shipintiantang.com/?C_T=play&C_id=39482'
+# url = 'https://cdn.800zy99.com/20190429/BaFeY8AN/index.m3u8'
+# url = 'https://cdn.800zy99.com/ppvod/8E3002A8549B952517691A45FFA8F3FB.m3u8'
+# url = 'https://cdn.800zy99.com/20190428/kQZ2AfYY/720kb/hls/6z8MdZ2790479.ts'
+
+
+
+
+
+
+
+
